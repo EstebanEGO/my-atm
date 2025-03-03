@@ -1,18 +1,17 @@
 'use client'
-import { useEffect, useState } from "react";
-import { isCustomer } from "./utils/session";
 import { Atm } from "./pages/atm";
 import { Register } from "./pages/register";
 import { Login } from "./pages/login";
+import { homeHook } from "./hooks/homeHook";
 
 export default function Home() {
-  const [showRegister, setShowRegister] = useState(false);
-  const [isAuth, setIsAuth] = useState(false);
 
-  useEffect(() => {
-    setIsAuth(isCustomer());
-  }, []);
-
+  const {
+    showRegister,
+    isAuth,
+    setShowRegister,
+    setIsAuth
+  } = homeHook();
 
   return (
     <div className="container mx-auto px-4 py-4">
