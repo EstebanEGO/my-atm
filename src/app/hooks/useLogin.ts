@@ -11,7 +11,7 @@ interface Props {
     form: Form;
     errors: any;
 }
-export const loginHook = (props: Props, setIsAuth: any) => {
+export const useLogin = (props: Props, setIsAuth: any) => {
     const [loginData, setLoginData] = useState(props);
     
     function onChange(e: any) {

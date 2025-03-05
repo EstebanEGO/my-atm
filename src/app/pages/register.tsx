@@ -1,12 +1,12 @@
 import { Button } from '../components/button';
-import { registerHook } from '../hooks/registerHook';
+import { useRegister } from '../hooks/useRegister';
 
 export const Register = (props: { setShowRegister: any }) => {
     const {
         registerData,
         onChange,
         onSubmit
-    } = registerHook({
+    } = useRegister({
         form: {
             firstname: '',
             lastname: ''

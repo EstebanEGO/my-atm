@@ -1,12 +1,12 @@
 import { Button } from '../components/button';
-import { loginHook } from '../hooks/loginHook';
+import { useLogin } from '../hooks/useLogin';
 
 export const Login = ({ setIsAuth, setShowRegister }: { setIsAuth: any, setShowRegister: any }) => {
     const {
         loginData,
         onChange,
         onSubmit
-    } = loginHook({
+    } = useLogin({
         form: {
             number: '',
             pin: ''

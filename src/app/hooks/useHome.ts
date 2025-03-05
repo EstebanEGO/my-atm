@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { isCustomer } from "../utils/session";
 
-export const homeHook = () => {
+export const useHome = () => {
     const [showRegister, setShowRegister] = useState(false);
     const [isAuth, setIsAuth] = useState(false);
 

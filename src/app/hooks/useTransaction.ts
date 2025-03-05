@@ -7,7 +7,7 @@ interface TransactionProp {
     createdAt: string;
 }
 
-export const transactionHook = (id: string) => {
+export const useTransaction = (id: string) => {
     const [transactions, setTransactions] = useState<TransactionProp[]>([]);
 
     useEffect(() => {

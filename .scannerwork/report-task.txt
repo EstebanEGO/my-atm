@@ -1,0 +1,6 @@
+projectKey=my-atm-frontend
+serverUrl=http://localhost:9000
+serverVersion=25.3.0.104237
+dashboardUrl=http://localhost:9000/dashboard?id=my-atm-frontend
+ceTaskId=20b5cd02-a449-40c4-8cb7-79b2f4a96724
+ceTaskUrl=http://localhost:9000/api/ce/task?id=20b5cd02-a449-40c4-8cb7-79b2f4a96724

@@ -11,7 +11,7 @@ interface Props {
     form: Form;
     errors: any;
 }
-export const registerHook = (props: Props) => {
+export const useRegister = (props: Props) => {
     const [registerData, setRegisterData] = useState(props);
 
     function onChange(e: any) {

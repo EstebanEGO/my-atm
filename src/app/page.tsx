@@ -2,7 +2,7 @@
 import { Atm } from "./pages/atm";
 import { Register } from "./pages/register";
 import { Login } from "./pages/login";
-import { homeHook } from "./hooks/homeHook";
+import { useHome } from "./hooks/useHome";
 
 export default function Home() {
 
@@ -11,7 +11,7 @@ export default function Home() {
     isAuth,
     setShowRegister,
     setIsAuth
-  } = homeHook();
+  } = useHome();
 
   return (
     <div className="container mx-auto px-4 py-4">

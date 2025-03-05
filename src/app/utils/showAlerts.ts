@@ -10,7 +10,7 @@ export function showAlert(cfg: Props, callback: any = null) {
     confirmButtonColor: "#6c757d",
   }).then((response: SweetAlertResult) => {
     if (response.isConfirmed) {
-      callback && callback();
+      callback?.();
     }
   });
 }

@@ -1,5 +1,5 @@
 import { Button } from "../components/button";
-import { atmHook } from "../hooks/atmHook";
+import { useAtm } from "../hooks/useAtm";
 import { currencyFormatter } from "../utils/util";
 import { Transactions } from "./transactions";
 
@@ -12,7 +12,7 @@ export const Atm = (props: { setIsAuth: any }) => {
         onChangeAmount,
         setAmountZero,
         sendTransaction
-    } = atmHook({
+    } = useAtm({
         customer: {
             id: '',
             firstname: '',
@@ -33,7 +33,7 @@ export const Atm = (props: { setIsAuth: any }) => {
         <div className="pt-2">
             <div className="grid grid-cols-2 gap-4">
                 <h3 className="text-fuchsia-700">Hola {customer.firstname} {customer.lastname}</h3>
-                <a className="text-end underline cursor-pointer" onClick={logOut}>Cerrar</a>
+                <button className="text-end underline cursor-pointer" onClick={logOut}>Cerrar</button>
             </div>
 
             <div className="flex justify-center text-5xl py-5">
@@ -41,9 +41,9 @@ export const Atm = (props: { setIsAuth: any }) => {
 
             </div>
             <div className="flex justify-center mb-3">
-                <a
+                <button
                     className="text-end underline cursor-pointer"
-                    onClick={() => setAtmData(atm => ({ ...atm, showTransactions: true }))}>Movimientos</a>
+                    onClick={() => setAtmData(atm => ({ ...atm, showTransactions: true }))}>Movimientos</button>
             </div>
             {
                 !showButtons &&
@@ -61,8 +61,8 @@ export const Atm = (props: { setIsAuth: any }) => {
                     <hr />
                     <div className="mt-2 grid grid-cols-2 gap-4">
                         {
-                            [100, 200, 500, 1000].map((value, index) => (
-                                <Button key={index} text={"$" + value} onClick={onChangeAmount} value={value} />
+                            [100, 200, 500, 1000].map((value) => (
+                                <Button key={value} text={"$" + value} onClick={onChangeAmount} value={value} />
                             ))
                         }
                         <label htmlFor="other">Otra cantidad</label>
@@ -79,9 +79,9 @@ export const Atm = (props: { setIsAuth: any }) => {
                 <div className="mt-3">
                     <hr />
                     <div className="text-end">
-                        <a
+                        <button
                             className="underline cursor-pointer"
-                            onClick={() => setAtmData(atm => ({ ...atm, showTransactions: false }))}>Ocultar</a>
+                            onClick={() => setAtmData(atm => ({ ...atm, showTransactions: false }))}>Ocultar</button>
                     </div>
                     <Transactions id={customer.id} />
                 </div>

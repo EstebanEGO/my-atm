@@ -20,7 +20,7 @@ interface Props {
     showButtons: boolean;
     showTransactions: boolean;
 }
-export const atmHook = (props: Props, setIsAuth: any) => {
+export const useAtm = (props: Props, setIsAuth: any) => {
 
     const [atmData, setAtmData] = useState(props);
     useEffect(() => setAtmData(atm => ({ ...atm, customer: getUser() })), []);
